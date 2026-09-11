@@ -19,13 +19,20 @@
 <article aria-labelledby="fusion-title">
 <header class="project-heading"><div><p class="eyebrow">Multimodal neuroimaging</p><h2 id="fusion-title">fMRI EEG fusion</h2></div><p class="project-intro">When and where the brain represents emotion in visual scenes.</p></header>
 <figure class="project-figure">
-<div class="video-stage">
-<video id="fusion-video" controls muted loop playsinline preload="metadata" poster="media/fmri-eeg-fusion-poster.jpg" width="1440" height="914" aria-label="fMRI EEG fusion across four cortical surface views" aria-describedby="fusion-caption">
-<source src="media/fmri-eeg-fusion.mp4" type="video/mp4">
-Your browser does not support this video. <a href="media/fmri-eeg-fusion.mp4">Download the visualization.</a>
+<div class="video-stage fusion-row">
+<video id="fusion-video" controls muted loop playsinline preload="metadata" poster="media/fmri-eeg-fusion-row-poster.png" width="1600" height="300" aria-label="Synchronized fMRI EEG fusion: left lateral, left medial, right lateral, and right medial views" aria-describedby="fusion-caption">
+<source src="media/fmri-eeg-fusion-row.mp4" type="video/mp4">
+Your browser does not support this video. <a href="media/fmri-eeg-fusion-row.mp4">Download the visualization.</a>
 </video>
+<div class="view-labels" aria-hidden="true"><span>Left hemisphere<span>Lateral</span></span><span>Left hemisphere<span>Medial</span></span><span>Right hemisphere<span>Lateral</span></span><span>Right hemisphere<span>Medial</span></span></div>
 </div>
-<figcaption id="fusion-caption"><span>Left &amp; right hemispheres · Lateral &amp; medial views</span><span>Accelerated playback · Analysis time shown in ms</span></figcaption>
+<div id="fusion-controls" class="fusion-controls" role="group" aria-label="Fusion animation playback" hidden>
+<button id="fusion-toggle" type="button" aria-controls="fusion-video" disabled>Play</button>
+<label class="sr-only" for="fusion-seek">Animation timeline</label><input id="fusion-seek" class="fusion-seek" type="range" min="0" max="1000" value="0" step="1" disabled>
+<output id="fusion-elapsed" class="fusion-elapsed">0:00 / 0:24</output>
+<label class="speed-label" for="fusion-speed">Speed <select id="fusion-speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select></label>
+</div>
+<figcaption id="fusion-caption" class="fusion-caption"><span>Analysis time <output id="fusion-analysis">−292 ms</output></span><span class="fusion-scale" aria-label="Fusion color scale, minus 0.03 to 0.05"><span>−0.03</span><span class="fusion-gradient" aria-hidden="true"></span><span>0.05</span></span></figcaption>
 </figure>
 <div class="project-notes"><p>Combining fMRI and EEG to characterize the temporal and spatial representations of emotion in visual scenes.</p><ul class="tags" aria-label="Project topics"><li>fMRI</li><li>EEG</li><li>Data visualization</li></ul></div>
 </article>

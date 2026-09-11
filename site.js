@@ -3,6 +3,44 @@ const fusionVideo = document.getElementById("fusion-video");
 if (fusionVideo) {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const saveData = navigator.connection?.saveData;
+  const controls = document.getElementById("fusion-controls");
+  const toggle = document.getElementById("fusion-toggle");
+  const seek = document.getElementById("fusion-seek");
+  const speed = document.getElementById("fusion-speed");
+  const elapsed = document.getElementById("fusion-elapsed");
+  const analysis = document.getElementById("fusion-analysis");
+  let animationFrame;
+  const formatTime = (seconds) => `${Math.floor(seconds / 60)}:${String(Math.floor(seconds % 60)).padStart(2, "0")}`;
+  const updateTimeline = () => {
+    const duration = fusionVideo.duration;
+    if (Number.isFinite(duration) && duration > 0) {
+      seek.value = String(fusionVideo.currentTime / duration * 1000);
+      elapsed.textContent = `${formatTime(fusionVideo.currentTime)} / ${formatTime(duration)}`;
+      const milliseconds = Math.min(573, Math.floor(fusionVideo.currentTime * 24)) * 4 - 292;
+      analysis.textContent = `${milliseconds < 0 ? "−" : ""}${Math.abs(milliseconds)} ms`;
+      seek.setAttribute("aria-valuetext", `Analysis time ${milliseconds} milliseconds`);
+    }
+  };
+  const tick = () => { updateTimeline(); if (!fusionVideo.paused) animationFrame = requestAnimationFrame(tick); };
+  const enableControls = () => { toggle.disabled = seek.disabled = false; updateTimeline(); };
+  controls.hidden = false;
+  fusionVideo.controls = false;
+  fusionVideo.addEventListener("loadedmetadata", enableControls);
+  if (fusionVideo.readyState >= 1) enableControls();
+  fusionVideo.addEventListener("play", () => { toggle.textContent = "Pause"; cancelAnimationFrame(animationFrame); tick(); });
+  fusionVideo.addEventListener("pause", () => { toggle.textContent = "Play"; cancelAnimationFrame(animationFrame); updateTimeline(); });
+  fusionVideo.addEventListener("seeked", updateTimeline);
+  fusionVideo.addEventListener("timeupdate", updateTimeline);
+  fusionVideo.addEventListener("error", () => { controls.hidden = true; fusionVideo.controls = true; });
+  toggle.addEventListener("click", () => {
+    if (fusionVideo.paused) fusionVideo.play().catch(() => {});
+    else fusionVideo.pause();
+  });
+  seek.addEventListener("input", () => {
+    if (Number.isFinite(fusionVideo.duration)) fusionVideo.currentTime = Number(seek.value) / 1000 * fusionVideo.duration;
+    updateTimeline();
+  });
+  speed.addEventListener("change", () => { fusionVideo.playbackRate = Number(speed.value); });
   // Keep the still poster for reduced motion, data saving, or blocked autoplay.
   if (!reducedMotion.matches && !saveData) {
     fusionVideo.muted = true;
