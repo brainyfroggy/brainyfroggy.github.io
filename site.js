@@ -1,6 +1,6 @@
 // Fill in verified links when content is provided. Empty links stay visibly pending.
 const portfolio = {
-  githubUrl: ""
+  githubUrl: "https://github.com/0042sc"
 };
 
 document.getElementById("year").textContent = new Date().getFullYear();
