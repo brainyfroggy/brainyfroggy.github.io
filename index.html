@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Selected work by Yujun Chen. Explore fMRI EEG fusion through a time-resolved cortical visualization.">
+<meta name="description" content="Neuroimaging projects by Yujun Chen: fMRI EEG fusion and spatial representations of visual scenes and emotion.">
 <meta name="theme-color" content="#ffffff"><title>Yujun Chen — Selected work</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b43db'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-weight='700' font-size='32' fill='white'%3EYC%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
@@ -15,9 +15,9 @@
 </header>
 <main id="main" class="wrap">
 <section class="work-section" id="work" aria-labelledby="work-title">
-<div class="collection-label"><h1 id="work-title">Selected work</h1><span>01</span></div>
+<div class="collection-label"><h1 id="work-title">Selected work</h1><span>01 / 02</span></div>
 <article aria-labelledby="fusion-title">
-<header class="project-heading"><div><p class="eyebrow">Multimodal neuroimaging</p><h2 id="fusion-title">fMRI EEG fusion</h2></div><p class="project-intro">A time-resolved view of fMRI–EEG fusion across the cortical surface.</p></header>
+<header class="project-heading"><div><p class="eyebrow">Multimodal neuroimaging</p><h2 id="fusion-title">fMRI EEG fusion</h2></div><p class="project-intro">When and where the brain represents emotion in visual scenes.</p></header>
 <figure class="project-figure">
 <div class="video-stage">
 <video id="fusion-video" controls muted loop playsinline preload="metadata" poster="media/fmri-eeg-fusion-poster.jpg" width="1440" height="914" aria-label="fMRI EEG fusion across four cortical surface views" aria-describedby="fusion-caption">
@@ -27,7 +27,21 @@ Your browser does not support this video. <a href="media/fmri-eeg-fusion.mp4">Do
 </div>
 <figcaption id="fusion-caption"><span>Left &amp; right hemispheres · Lateral &amp; medial views</span><span>Accelerated playback · Analysis time shown in ms</span></figcaption>
 </figure>
-<div class="project-notes"><p>Four cortical views follow the fusion map over time, with the original color scale and timestamps retained.</p><ul class="tags" aria-label="Project topics"><li>fMRI</li><li>EEG</li><li>Data visualization</li></ul></div>
+<div class="project-notes"><p>Combining fMRI and EEG to characterize the temporal and spatial representations of emotion in visual scenes.</p><ul class="tags" aria-label="Project topics"><li>fMRI</li><li>EEG</li><li>Data visualization</li></ul></div>
+</article>
+<article class="next-project" id="scene-emotion" aria-labelledby="scene-title">
+<div class="collection-label"><span>02</span><span>Searchlight analysis</span></div>
+<header class="project-heading"><div><p class="eyebrow">Representations across the brain</p><h2 id="scene-title">Scenes &amp; emotion</h2></div><p class="project-intro">Mapping visual features, scene representations, and emotion.</p></header>
+<figure class="project-figure">
+<div class="brain-stage">
+<img id="brain-poster" class="brain-poster" src="media/scene-emotion-views.png" alt="Three views of a translucent brain showing GIST regions in blue, scene regions in red, and emotion regions in green." width="4224" height="1133" loading="lazy">
+<div id="brain-plot" class="brain-plot" role="img" aria-label="Interactive 3D brain showing GIST, CLIP-ViT, and valence-arousal regions" aria-describedby="brain-help" hidden></div>
+</div>
+<figcaption class="brain-caption"><ul class="brain-legend" aria-label="Map legend"><li><span class="swatch gist" aria-hidden="true"></span>GIST · Visual features</li><li><span class="swatch scene" aria-hidden="true"></span>CLIP-ViT · Scene</li><li><span class="swatch emotion" aria-hidden="true"></span>Valence–arousal · Emotion</li></ul><button id="explore-brain" class="explore-button" aria-controls="brain-plot" aria-expanded="false">Explore in 3D <span aria-hidden="true">↗</span></button></figcaption>
+<div id="brain-controls" class="brain-controls" hidden><div class="view-controls" role="group" aria-label="Brain viewpoint"><button type="button" data-view="left">Left</button><button type="button" data-view="posterior">Back</button><button type="button" data-view="right">Right</button><button type="button" data-view="reset">Reset view</button></div><div class="layer-controls" role="group" aria-label="Visible representations"><label><input type="checkbox" data-layer="GIST" checked> GIST</label><label><input type="checkbox" data-layer="CLIP-ViT" checked> Scene</label><label><input type="checkbox" data-layer="Valence-Arousal" checked> Emotion</label></div><p id="brain-help">Drag to rotate. Use the view buttons to change perspective.</p></div>
+<p id="brain-status" class="brain-status" role="status" aria-live="polite"></p>
+</figure>
+<div class="project-notes"><p>Searchlight analysis compares brain representations with visual features (GIST), scene features (CLIP-ViT), and emotion ratings (valence and arousal).</p><ul class="tags" aria-label="Project topics"><li>fMRI</li><li>Searchlight analysis</li><li>Data visualization</li></ul></div>
 </article>
 </section>
 </main>
