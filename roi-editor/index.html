@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Try Yujun Chen's browser-based NIfTI ROI editor with a synthetic sample volume and read its usage guide and limits.">
+  <meta name="theme-color" content="#ffffff"><title>NIfTI ROI Editor — Yujun Chen</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b43db'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-weight='700' font-size='32' fill='white'%3EYC%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../assets/styles.7fe2f8b704b8.css">
+  <style>
+    .tool-hero{padding:56px 0 38px}.tool-hero h1{font-size:clamp(42px,6vw,70px);margin:12px 0 20px;max-width:950px}
+    .tool-lead{font-size:clamp(18px,2.2vw,24px);line-height:1.5;color:var(--muted);max-width:820px}
+    .tool-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.tool-actions a{display:inline-block;padding:11px 17px;border-radius:5px;font-size:15px;border:1px solid var(--line)}
+    .tool-actions .primary{background:var(--ink);color:#fff;border-color:var(--ink)}.tool-actions .primary:hover{background:var(--blue)}
+    .tool-example{border-top:1px solid var(--line);padding:30px 0 44px}.tool-example h2{font-size:28px;margin-bottom:10px}
+    .tool-example p,.tool-guide p,.tool-guide li{color:var(--muted)}.tool-example p{max-width:760px;margin-bottom:18px}
+    .editor-frame{width:100%;height:900px;border:1px solid var(--line);border-radius:8px;background:#0a0e17;display:block}
+    .tool-guide{display:grid;grid-template-columns:1fr 2fr;gap:56px;border-top:1px solid var(--line);padding:38px 0}
+    .tool-guide h2{font-size:31px}.tool-guide h3{font-size:18px;margin:0 0 9px}.tool-guide p+p{margin-top:12px}
+    .guide-block+.guide-block{margin-top:28px}.tool-guide ol,.tool-guide ul{padding-left:23px;margin:0}.tool-guide li+li{margin-top:7px}
+    .tool-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0 28px}
+    .tool-facts div{border:1px solid var(--line);padding:18px;border-radius:6px;background:var(--soft)}
+    .tool-facts strong{display:block;font-size:15px;margin-bottom:7px}.tool-facts span{display:block;color:var(--muted);font-size:14px;line-height:1.5}
+    .guide-note{font-size:14px}.guide-note a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:850px){.tool-guide{grid-template-columns:1fr;gap:20px}.editor-frame{height:1050px}}
+    @media(max-width:600px){.tool-hero{padding:35px 0 30px}.tool-example{padding-top:26px}.editor-frame{height:1260px}.tool-facts{grid-template-columns:1fr}}
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="../" aria-label="Yujun Chen, home">Yujun Chen<span class="brand-period">.</span></a>
+    <nav aria-label="Main navigation"><a href="../">Work</a><a href="../about.html">About</a></nav>
+  </header>
+  <main id="main" class="wrap">
+    <section class="tool-hero" aria-labelledby="tool-title">
+      <p class="eyebrow">Selected work / 03</p>
+      <h1 id="tool-title">NIfTI ROI Editor</h1>
+      <p class="tool-lead">Inspect a 3D image, mark voxels in linked views, and export a region of interest as a NIfTI mask. The sample below is synthetic, so you can try the workflow immediately.</p>
+      <div class="tool-actions"><a class="primary" href="app.html?demo=1" target="_blank" rel="noopener">Open full-screen editor ↗</a><a href="#guide">Read the guide ↓</a></div>
+    </section>
+    <section class="tool-example" aria-labelledby="demo-title">
+      <h2 id="demo-title">Try the editor</h2>
+      <p>The synthetic anatomy and activation maps load automatically. Choose <strong>Paint</strong>, select voxels in any view, and export a mask. You can also open your own 3D NIfTI files.</p>
+      <iframe class="editor-frame" src="app.html?demo=1" title="Interactive NIfTI ROI Editor, loaded with synthetic sample volumes" loading="eager"></iframe>
+      <p class="guide-note" style="margin-top:13px">For more room, <a href="app.html?demo=1" target="_blank" rel="noopener">open the editor in a new tab</a>. The sample is a generated phantom, not human imaging data.</p>
+    </section>
+    <section class="tool-guide" id="guide" aria-labelledby="guide-title">
+      <h2 id="guide-title">Using the editor</h2>
+      <div>
+        <div class="guide-block">
+          <h3>Quick start</h3>
+          <ol>
+            <li>Start with the synthetic sample, or choose <strong>Open Background</strong> for a 3D NIfTI-1 image.</li>
+            <li>Optionally choose <strong>Add Overlay</strong> for a second map. Adjust its color, opacity, and displayed value range.</li>
+            <li>Paint or erase on axial, coronal, or sagittal slices. <strong>Fill Slice</strong> selects eligible voxels in the current plane; <strong>Sphere</strong> selects a 3D neighborhood. Use the mouse wheel or slice arrows to move through the volume.</li>
+            <li>Use <strong>Undo</strong> if needed, then choose <strong>Export ROI</strong> to download a labeled <code>.nii.gz</code> mask in the background image's grid.</li>
+          </ol>
+        </div>
+        <div class="guide-block">
+          <h3>What the tool does</h3>
+          <div class="tool-facts">
+            <div><strong>Linked views</strong><span>Three orthogonal slices share a crosshair and ROI labels.</span></div>
+            <div><strong>Overlay alignment</strong><span>When geometry differs, the overlay is mapped to the background grid using its NIfTI affine and nearest-neighbor sampling.</span></div>
+            <div><strong>Local editing</strong><span>Files opened from your device are read in the browser; this page has no file-upload service.</span></div>
+          </div>
+        </div>
+        <div class="guide-block">
+          <h3>Format and limits</h3>
+          <p>This browser prototype supports single-volume, 3D NIfTI-1 <code>.nii</code> and <code>.nii.gz</code> files up to 20 million voxels. NIfTI-2 and time series are rejected with a clear message. With an overlay loaded, paint and fill operate on nonzero voxels inside the displayed value range. The exported mask uses integer region labels and the background image's spatial header.</p>
+          <p>Large volumes can be slow or exceed a device's browser memory. Undo history is limited by a memory budget. Nearest-neighbor overlay sampling preserves labels but is not intended as a general-purpose interpolation method for continuous images. Verify exported masks in your analysis software before using them in research; this is not a clinical tool.</p>
+        </div>
+        <div class="guide-block">
+          <h3>Data and provenance</h3>
+          <p>The built-in sample volumes and preview were generated specifically for this demo. The optional <strong>MNI152 Template</strong> button downloads a public template from NiiVue. The editor's gzip library is served with the site. Your local files stay in browser memory and are cleared when the page closes or reloads.</p>
+          <p class="guide-note"><a href="demo/synthetic-anatomy.nii.gz" download>Download sample anatomy</a> · <a href="demo/synthetic-activation.nii.gz" download>Download sample overlay</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap"><span>© 2026 Yujun Chen</span><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+</body>
+</html>

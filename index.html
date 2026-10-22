@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Neuroimaging projects by Yujun Chen: fMRI EEG fusion and spatial representations of visual scenes and emotion.">
+<meta name="description" content="Selected work by Yujun Chen: fMRI EEG fusion, scene and emotion maps, and a browser-based NIfTI ROI editor.">
 <meta name="theme-color" content="#ffffff"><title>Yujun Chen — Selected work</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b43db'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-weight='700' font-size='32' fill='white'%3EYC%3C/text%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/styles.8d9f8c17b2b1.css">
+<link rel="stylesheet" href="assets/styles.7fe2f8b704b8.css">
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -17,7 +17,7 @@
 <section class="work-section" id="work" aria-labelledby="work-title">
 <div class="collection-label"><h1 id="work-title">Selected work</h1></div>
 <article aria-labelledby="fusion-title">
-<header class="project-heading"><div><p class="eyebrow project-kicker"><span class="project-number">01 / 02</span><span>Multimodal neuroimaging</span></p><h2 id="fusion-title">fMRI EEG fusion</h2></div><p class="project-intro">When and where the brain represents emotion in visual scenes.</p></header>
+<header class="project-heading"><div><p class="eyebrow project-kicker"><span class="project-number">01 / 03</span><span>Multimodal neuroimaging</span></p><h2 id="fusion-title">fMRI EEG fusion</h2></div><p class="project-intro">When and where the brain represents emotion in visual scenes.</p></header>
 <figure class="project-figure">
 <div class="video-stage fusion-row">
 <video id="fusion-video" controls muted loop playsinline preload="metadata" poster="media/fmri-eeg-fusion-row-poster.png" width="1600" height="300" aria-label="Synchronized fMRI EEG fusion: left lateral, left medial, right lateral, and right medial views" aria-describedby="fusion-caption">
@@ -37,7 +37,7 @@ Your browser does not support this video. <a href="media/fmri-eeg-fusion-row.mp4
 <div class="project-notes"><p>Combining fMRI and EEG to characterize the temporal and spatial representations of emotion in visual scenes.</p><ul class="tags" aria-label="Project topics"><li>fMRI</li><li>EEG</li><li>Data visualization</li></ul></div>
 </article>
 <article class="next-project" id="scene-emotion" aria-labelledby="scene-title">
-<header class="project-heading"><div><p class="eyebrow project-kicker"><span class="project-number">02 / 02</span><span>Searchlight analysis</span></p><h2 id="scene-title">Scenes &amp; emotion</h2></div><p class="project-intro">Mapping visual features, scene representations, and emotion.</p></header>
+<header class="project-heading"><div><p class="eyebrow project-kicker"><span class="project-number">02 / 03</span><span>Searchlight analysis</span></p><h2 id="scene-title">Scenes &amp; emotion</h2></div><p class="project-intro">Mapping visual features, scene representations, and emotion.</p></header>
 <figure class="project-figure">
 <div class="brain-stage">
 <img id="brain-poster" class="brain-poster" src="media/scene-emotion-views.png" alt="Three views of a translucent brain showing GIST regions in blue, scene regions in red, and emotion regions in green." width="4224" height="1133" loading="lazy">
@@ -48,6 +48,14 @@ Your browser does not support this video. <a href="media/fmri-eeg-fusion-row.mp4
 <p id="brain-status" class="brain-status" role="status" aria-live="polite"></p>
 </figure>
 <div class="project-notes"><p>Searchlight analysis compares brain representations with visual features (GIST), scene features (CLIP-ViT), and emotion ratings (valence and arousal).</p><ul class="tags" aria-label="Project topics"><li>fMRI</li><li>Searchlight analysis</li><li>Data visualization</li></ul></div>
+</article>
+<article class="next-project" id="roi-editor" aria-labelledby="roi-title">
+<header class="project-heading"><div><p class="eyebrow project-kicker"><span class="project-number">03 / 03</span><span>Scientific imaging software</span></p><h2 id="roi-title">NIfTI ROI Editor</h2></div><p class="project-intro">A browser tool for inspecting volumes, selecting voxels, and exporting region masks.</p></header>
+<figure class="project-figure">
+<a class="roi-preview-link" href="roi-editor/" aria-label="Explore the NIfTI ROI Editor and its demo"><img src="media/roi-editor-preview.png" alt="Illustrative editor preview using synthetic anatomy and activation maps, three linked slice views, and ROI painting controls." width="1440" height="820" loading="lazy"></a>
+<figcaption class="roi-caption"><span>Illustrative preview · synthetic volume, no participant data</span><a class="roi-demo-link" href="roi-editor/">Try the interactive demo <span aria-hidden="true">↗</span></a></figcaption>
+</figure>
+<div class="project-notes"><p>Built to make volumetric ROI selection usable in a browser. The editor links axial, coronal, and sagittal views, supports overlay-guided selection, and exports a labeled NIfTI mask. The demo includes a usage guide, compatibility notes, and explicit limitations.</p><ul class="tags" aria-label="Project topics"><li>Medical imaging</li><li>Scientific software</li><li>Interactive visualization</li></ul></div>
 </article>
 </section>
 </main>
