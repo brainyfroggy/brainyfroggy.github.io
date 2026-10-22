@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Edit volumetric regions of interest in your browser and export NIfTI masks. Includes a synthetic sample volume.">
+<meta name="description" content="Edit volumetric regions of interest in your browser and export NIfTI masks. Opens with MNI152 and an optional valence–arousal t-map example.">
 <title>NIfTI ROI Editor — Yujun Chen</title>
 <script src="../vendor/pako.min.js"></script>
 <style>
@@ -126,8 +126,8 @@
 <div class="app-header">
   <div class="app-title"><div class="icon">R</div>NIfTI ROI Editor</div>
   <div class="header-actions">
-    <button class="btn-secondary" onclick="loadDemo()">Try sample</button>
-    <button class="btn-secondary" onclick="loadMNI152()" title="Downloads a public template from NiiVue">MNI152 Template ↗</button>
+    <button class="btn-secondary" onclick="loadDemo()">Load example map</button>
+    <button class="btn-secondary" onclick="loadMNI152()" title="Reset to the bundled MNI152 template">Reset MNI152</button>
     <button class="btn-secondary" onclick="pickFile('bg')">Open Background</button>
     <button class="btn-secondary" onclick="pickFile('ov')">Add Overlay</button>
     <input type="file" id="fileInput" accept=".nii,.nii.gz,.gz" style="display:none">
@@ -218,7 +218,7 @@
     <div class="dropzone" id="dropzone">
       <div class="dropzone-box" id="dropzoneBox">
         <div class="dropzone-icon">&#129504;</div>
-        <div class="dropzone-text">Explore a sample or open a NIfTI volume</div>
+        <div class="dropzone-text">Loading the MNI152 template</div>
         <div class="dropzone-sub">Drop a .nii or .nii.gz file here, or use the buttons above. Your files stay in this browser.</div>
       </div>
       <div class="template-section">
@@ -226,13 +226,13 @@
         <div class="template-cards">
           <button class="template-card" onclick="loadDemo()">
             <div class="template-card-icon">✦</div>
-            <div class="template-card-title">Try sample volume</div>
-            <div class="template-card-desc">Synthetic anatomy and activation<br>No participant data</div>
+            <div class="template-card-title">Load example map</div>
+            <div class="template-card-desc">Valence–arousal t-map<br>over MNI152</div>
           </button>
           <button class="template-card" onclick="loadMNI152()">
             <div class="template-card-icon">&#129504;</div>
             <div class="template-card-title">MNI152 Template</div>
-            <div class="template-card-desc">Download standard 2mm T1<br>from NiiVue</div>
+            <div class="template-card-desc">Reset to the bundled<br>T1 template</div>
           </button>
           <button class="template-card" onclick="pickFile('bg')">
             <div class="template-card-icon">&#128194;</div>
@@ -556,27 +556,34 @@ function updateThresh(){
 }
 
 // ==================== MNI152 ====================
-const MNI_URL='https://niivue.github.io/niivue-demo-images/mni152.nii.gz';
+const MNI_PATH='demo/mni152.nii.gz';
+const EXAMPLE_MAP_PATH='demo/valence-arousal-tmap.nii.gz';
 function showLoad(m){let e=document.getElementById('loadOv');if(!e){e=document.createElement('div');e.id='loadOv';e.className='loading-overlay';e.innerHTML='<div class="loading-spinner"></div><div class="loading-text" id="loadTxt"></div>';document.body.appendChild(e);}document.getElementById('loadTxt').textContent=m||'Loading...';e.style.display='';}
 function hideLoad(){const e=document.getElementById('loadOv');if(e)e.style.display='none';}
+async function fetchBundledVolume(path){
+  const response=await fetch(path);
+  if(!response.ok)throw new Error(path+' is unavailable (HTTP '+response.status+').');
+  return parseNIfTI(decomp(await response.arrayBuffer()));
+}
 async function loadMNI152(){
-  showLoad('Downloading MNI152 template...');setStatus('Fetching MNI152...');
-  try{const r=await fetch(MNI_URL);if(!r.ok)throw new Error('HTTP '+r.status);
-    const vol=parseNIfTI(decomp(await r.arrayBuffer()));loadAsBg(vol,'MNI152 T1 (2mm)');hideLoad();
-  }catch(err){hideLoad();setStatus('Failed: '+err.message);alert('Could not download MNI152.\n\n'+MNI_URL+'\n\nDownload manually and use "Open Background".');}
+  showLoad('Loading MNI152 template...');setStatus('Loading MNI152...');
+  try{
+    const vol=await fetchBundledVolume(MNI_PATH);
+    if(loadAsBg(vol,'MNI152 T1'))setStatus('MNI152 ready — add an overlay or paint a region.');
+  }catch(err){setStatus('MNI152 failed: '+err.message);console.error(err);alert('Could not load the bundled MNI152 template.\n\n'+err.message+'\n\nUse "Open Background" to load a local NIfTI file.');}
+  finally{hideLoad();}
 }
 async function loadDemo(){
-  showLoad('Loading synthetic sample...');setStatus('Loading sample volumes...');
+  showLoad('Loading MNI152 and example map...');setStatus('Loading example volumes...');
   try{
-    const paths=['demo/synthetic-anatomy.nii.gz','demo/synthetic-activation.nii.gz'];
-    const responses=await Promise.all(paths.map(p=>fetch(p)));
-    if(responses.some(r=>!r.ok))throw new Error('Sample files are unavailable.');
-    const [bg,ov]=await Promise.all(responses.map(async r=>parseNIfTI(decomp(await r.arrayBuffer()))));
-    if(loadAsBg(bg,'Synthetic anatomy')){
-      loadAsOv(ov,'Synthetic activation');
-      setStatus('Synthetic sample ready — paint in a view, then export your ROI.');
+    const [bg,ov]=await Promise.all([fetchBundledVolume(MNI_PATH),fetchBundledVolume(EXAMPLE_MAP_PATH)]);
+    if(loadAsBg(bg,'MNI152 T1')){
+      loadAsOv(ov,'Valence–arousal t-map');
+      if(!ovNii)throw new Error('The example map could not be aligned to MNI152.');
+      crosshair=[160,50,107];redrawAll();
+      setStatus('Example map ready — paint in a view, then export your ROI.');
     }
-  }catch(err){setStatus('Sample failed: '+err.message);console.error(err);}
+  }catch(err){setStatus('Example failed: '+err.message);console.error(err);alert('Could not load the example map.\n\n'+err.message);}
   finally{hideLoad();}
 }
 
@@ -765,7 +772,10 @@ function exportROI(){
 document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.key==='z'){e.preventDefault();undoAction();}});
 window.addEventListener('resize',()=>{if(bgNii)setupCanvases();redrawAll();});
 renderROIList();
-if(new URLSearchParams(location.search).get('demo')==='1')loadDemo();
+document.addEventListener('DOMContentLoaded',()=>{
+  if(new URLSearchParams(location.search).get('demo')==='1')loadDemo();
+  else loadMNI152();
+});
 </script>
 </body>
 </html>

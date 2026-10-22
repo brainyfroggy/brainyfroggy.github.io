@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Try Yujun Chen's browser-based NIfTI ROI editor with a synthetic sample volume and read its usage guide and limits.">
+  <meta name="description" content="Try Yujun Chen's browser-based NIfTI ROI editor with an MNI152 template and valence–arousal t-map example; read its usage guide and limits.">
   <meta name="theme-color" content="#ffffff"><title>NIfTI ROI Editor — Yujun Chen</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b43db'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Arial' font-weight='700' font-size='32' fill='white'%3EYC%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="../assets/styles.7fe2f8b704b8.css">
@@ -35,14 +35,14 @@
     <section class="tool-hero" aria-labelledby="tool-title">
       <p class="eyebrow">Selected work / 03</p>
       <h1 id="tool-title">NIfTI ROI Editor</h1>
-      <p class="tool-lead">Inspect a 3D image, mark voxels in linked views, and export a region of interest as a NIfTI mask. The sample below is synthetic, so you can try the workflow immediately.</p>
+      <p class="tool-lead">Inspect a 3D image, mark voxels in linked views, and export a region of interest as a NIfTI mask. The example opens a valence–arousal t-map on the MNI152 template.</p>
       <div class="tool-actions"><a class="primary" href="app.html?demo=1" target="_blank" rel="noopener">Open full-screen editor ↗</a><a href="#guide">Read the guide ↓</a></div>
     </section>
     <section class="tool-example" aria-labelledby="demo-title">
       <h2 id="demo-title">Try the editor</h2>
-      <p>The synthetic anatomy and activation maps load automatically. Choose <strong>Paint</strong>, select voxels in any view, and export a mask. You can also open your own 3D NIfTI files.</p>
-      <iframe class="editor-frame" src="app.html?demo=1" title="Interactive NIfTI ROI Editor, loaded with synthetic sample volumes" loading="eager"></iframe>
-      <p class="guide-note" style="margin-top:13px">For more room, <a href="app.html?demo=1" target="_blank" rel="noopener">open the editor in a new tab</a>. The sample is a generated phantom, not human imaging data.</p>
+      <p>The MNI152 template and research t-map load automatically. Choose <strong>Paint</strong>, select voxels in any view, and export a mask. You can also open your own 3D NIfTI files.</p>
+      <iframe class="editor-frame" src="app.html?demo=1" title="Interactive NIfTI ROI Editor, loaded with MNI152 and a valence–arousal t-map" loading="eager"></iframe>
+      <p class="guide-note" style="margin-top:13px">For more room, <a href="app.html?demo=1" target="_blank" rel="noopener">open the editor in a new tab</a>. The map is an illustrative output of a research analysis; it is not a diagnostic image.</p>
     </section>
     <section class="tool-guide" id="guide" aria-labelledby="guide-title">
       <h2 id="guide-title">Using the editor</h2>
@@ -50,8 +50,8 @@
         <div class="guide-block">
           <h3>Quick start</h3>
           <ol>
-            <li>Start with the synthetic sample, or choose <strong>Open Background</strong> for a 3D NIfTI-1 image.</li>
-            <li>Optionally choose <strong>Add Overlay</strong> for a second map. Adjust its color, opacity, and displayed value range.</li>
+            <li>The editor opens with MNI152 as the background; this page also loads the example t-map. Choose <strong>Reset MNI152</strong> to clear the example, or <strong>Open Background</strong> for your own 3D NIfTI-1 image.</li>
+            <li>Choose <strong>Add Overlay</strong> for another map. Adjust its color, opacity, and displayed value range.</li>
             <li>Paint or erase on axial, coronal, or sagittal slices. <strong>Fill Slice</strong> selects eligible voxels in the current plane; <strong>Sphere</strong> selects a 3D neighborhood. Use the mouse wheel or slice arrows to move through the volume.</li>
             <li>Use <strong>Undo</strong> if needed, then choose <strong>Export ROI</strong> to download a labeled <code>.nii.gz</code> mask in the background image's grid.</li>
           </ol>
@@ -71,8 +71,8 @@
         </div>
         <div class="guide-block">
           <h3>Data and provenance</h3>
-          <p>The built-in sample volumes and preview were generated specifically for this demo. The optional <strong>MNI152 Template</strong> button downloads a public template from NiiVue. The editor's gzip library is served with the site. Your local files stay in browser memory and are cleared when the page closes or reloads.</p>
-          <p class="guide-note"><a href="demo/synthetic-anatomy.nii.gz" download>Download sample anatomy</a> · <a href="demo/synthetic-activation.nii.gz" download>Download sample overlay</a></p>
+          <p>The background is the <a href="https://github.com/niivue/niivue-demo-images" target="_blank" rel="noopener noreferrer">NiiVue MNI152 demo template</a>, served here with attribution. The overlay is a valence–arousal searchlight t-map from Yujun Chen's research. The work-page image is a screenshot of the editor with these volumes. The editor's gzip library is served with the site. Files you open from your device stay in browser memory and are cleared when the page closes or reloads.</p>
+          <p class="guide-note"><a href="demo/mni152.nii.gz" download>Download MNI152 template</a> · <a href="demo/valence-arousal-tmap.nii.gz" download>Download example t-map</a> · <a href="demo/NIIVUE-DEMO-IMAGES-LICENSE.txt">Template license</a></p>
         </div>
       </div>
     </section>
