@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An open, expanding sensitivity analysis of how fMRI preprocessing, single-trial beta estimation, normalization and searchlight radius change representational similarity results.">
+  <meta name="theme-color" content="#ffffff"><title>Searchlight sensitivity grid — Yujun Chen</title>
+  <link rel="stylesheet" href="../assets/styles.7fe2f8b704b8.css">
+  <link rel="stylesheet" href="sensitivity.css">
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap"><a class="wordmark" href="../" aria-label="Yujun Chen, home">Yujun Chen<span class="brand-period">.</span></a><nav aria-label="Main navigation"><a href="../">Work</a><a href="../about.html">About</a></nav></header>
+<main id="main" class="wrap">
+  <section class="sens-hero" aria-labelledby="page-title">
+    <p class="eyebrow">Methods sensitivity · ongoing research</p>
+    <h1 id="page-title">How much does an fMRI analysis choice change the map?</h1>
+    <p class="sens-lead">A controlled grid varies the processing of the same 30-participant affective-image cohort, then measures how many voxels survive group-level searchlight RSA. Each result is labeled by its exact settings, so an apparent neural finding can be traced back to the choices that produced it.</p>
+    <div class="sens-stat-row" aria-label="Current analysis scope"><div><strong>57</strong><span>completed configurations in this comparable slice</span></div><div><strong>114</strong><span>Natural and AI group maps</span></div><div><strong>60 × 60</strong><span>image RDM per source · 1,770 unique pairs</span></div><div><strong>30</strong><span>participants</span></div></div>
+    <p class="sens-status"><span class="status-dot" aria-hidden="true"></span>Current results below; the expanded grid is planned and has not been run.</p>
+  </section>
+
+  <section class="sens-section" aria-labelledby="question-title">
+    <div class="sens-section-head"><span class="eyebrow">01 / The question</span><h2 id="question-title">Which settings drive the observed result?</h2></div>
+    <div class="sens-two-col"><p>Natural and AI-generated images are analyzed separately. For each source, a 60-image fMRI dissimilarity matrix is compared with a matrix of Euclidean distances between ChatGPT valence and arousal ratings. The searchlight moves one voxel at a time. Subject maps enter a group test; voxelwise FDR is applied separately to each resulting map, followed by a minimum cluster extent of 10 voxels.</p><p>Voxel count is a sensitivity measure, not an accuracy score or a measure of scientific truth. The figure and table expose how counts shift when the beta estimator, normalization or spatial sampling changes. The current comparisons are exploratory; a large count in one setting does not validate that setting.</p></div>
+  </section>
+
+  <section class="sens-section" aria-labelledby="figure-title">
+    <div class="sens-section-head"><span class="eyebrow">02 / Summary figure</span><h2 id="figure-title">The current grid</h2></div>
+    <figure class="static-summary"><img src="../media/sensitivity-summary.svg" width="1200" height="720" alt="Twelve SPM12 LSS beta normalization settings with raw ratings, showing the number of Natural and AI searchlight voxels surviving FDR and cluster threshold."><figcaption>A focused slice of the completed grid: SPM 6 mm, SPM12 LSS, five-voxel radius and raw GPT ratings. Color intensity is logarithmic; numbers are exact surviving voxel counts.</figcaption></figure>
+    <p class="sens-section-intro">The bars show surviving voxels for each completed Natural and AI map. Select an estimator group or normalization to inspect the corresponding settings. The bar scale is logarithmic so small and large clusters remain visible; exact counts appear in the table.</p>
+    <div class="sens-controls"><label>Estimator and preprocessing <select id="group-filter"><option value="all">All completed groups</option></select></label><label>Beta normalization <select id="beta-filter"><option value="all">All tested beta normalizations</option></select></label><label>Rating normalization <select id="rating-filter"><option value="all">All tested rating normalizations</option></select></label></div>
+    <figure class="sens-chart"><div class="chart-head"><div><strong id="chart-title">Completed configurations</strong><span id="chart-count"></span></div><div class="chart-legend"><span><i class="key-natural"></i>Natural</span><span><i class="key-ai"></i>AI</span></div></div><div class="chart-scroll"><div id="chart" class="chart-rows" role="img" aria-label="Bar chart of surviving voxel counts across completed configurations"></div></div><figcaption>Group-level positive searchlight RSA voxels after per-map voxelwise FDR q&lt;.05 and clusters ≥10 voxels. A zero means no voxels survived. Counts across different voxel grids or sphere geometries should not be read as directly equivalent effect sizes.</figcaption></figure>
+  </section>
+
+  <section class="sens-section" aria-labelledby="results-title">
+    <div class="sens-section-head"><span class="eyebrow">03 / Completed tests</span><h2 id="results-title">Inspect the exact settings</h2></div>
+    <p class="sens-section-intro">These <span id="result-count">57</span> unique configurations meet the displayed cohort, RDM and threshold criteria. The table includes the current SPM 6 mm matched-LSS normalization sweep, a GLMsingle Type-D comparison, and the existing fMRIPrep 4 mm LSS comparison. They are observed results, not the full factorial plan.</p>
+    <div class="sens-table-wrap"><table><thead><tr><th scope="col">Preprocessing</th><th scope="col">Beta estimator</th><th scope="col">Sphere</th><th scope="col">Beta normalization</th><th scope="col">Rating normalization</th><th scope="col" class="number">Natural voxels</th><th scope="col" class="number">AI voxels</th></tr></thead><tbody id="results-body"></tbody></table></div>
+    <p class="sens-footnote">Data: aggregate group voxel counts from the analysis inventory, curated for 60 images/source, 1,770 pairs, n=30, GPT valence–arousal RDM, per-map FDR q&lt;.05, and cluster extent ≥10. No participant-level data are published here. <a href="data/results.json" download>Download the displayed aggregate data ↓</a></p>
+  </section>
+
+  <section class="sens-section" aria-labelledby="plan-title">
+    <div class="sens-section-head"><span class="eyebrow">04 / Planned expansion</span><h2 id="plan-title">The full parameter grid</h2></div>
+    <p class="sens-section-intro">These axes describe the next HiPerGator runs. Blank cells in this design have no result yet. Spatial resolution and smoothing will be recorded independently; radius in voxels will also be reported in millimeters for each output grid.</p>
+    <div class="axis-grid">
+      <article><span>01 · Preprocessing</span><h3>Resolution and pipeline</h3><p>Traditional SPM and fMRIPrep workflows; acquisition and output-grid resolution, normalization to MNI, motion and nuisance handling, and other pipeline choices kept explicit. The completed slice includes an MNI 2 mm SPM grid and an approximately 1.80 × 1.80 × 2.25 mm fMRIPrep grid.</p></article>
+      <article><span>02 · Smoothing</span><h3>Before and after GLM</h3><p>0–8 mm FWHM before the GLM and 0–8 mm after the GLM, including no smoothing. The precise step size and valid combinations will be fixed before submission; post-GLM smoothing will be tracked separately from preprocessing smoothing.</p></article>
+      <article><span>03 · Beta estimation</span><h3>Single-trial models</h3><p>SPM12 LSS, SPM12 LSA, and GLMsingle configurations. GLMsingle factors include HRF treatment, GLMdenoise on/off, fractional ridge on/off and their eligible combinations. Estimator settings will be reported in full for each output.</p></article>
+      <article><span>04 · Searchlight</span><h3>Six sphere radii</h3><p>Radii 1, 2, 3, 4, 5 and 6 voxels, with centers advanced one voxel at a time. Every map uses the same 60 images per source, yielding a 60 × 60 RDM and 1,770 unique image pairs.</p></article>
+      <article><span>05 · Normalization</span><h3>Betas and ratings</h3><p>Raw, source-wise and pooled image-level beta z scores, plus trial-level voxel z scores across all trials, within source, within run and within run × source, with the tested image-level follow-up options. Ratings are tested raw, source-wise z scored and pooled z scored.</p></article>
+      <article><span>06 · Group inference</span><h3>One consistent reporting rule</h3><p>Only the 30-participant cohort. Natural and AI maps are tested separately, with voxelwise FDR q&lt;.05 per map and clusters of at least 10 voxels. Decoding is a later phase and is not counted as a completed RSA test.</p></article>
+    </div>
+    <details class="parameter-register"><summary>Preprocessing fields recorded for every future run</summary><div><p>Each result will carry its acquisition voxel size, input space, preprocessing software and version, slice-timing method, motion realignment and censoring rule, anatomical coregistration, tissue segmentation, MNI template and warp, resampling interpolation, output voxel size, nuisance regressors, temporal filtering, pre-GLM FWHM, post-GLM FWHM, brain mask, and the subject/run inclusion list. Values that are fixed across the grid will still be reported.</p><p>The existing public inventory records preprocessing summaries rather than every field above. Those details will be audited from the original job manifests before the expanded runs are added.</p></div></details>
+    <div class="plan-callout"><strong>Why no total planned-test count yet?</strong><p>The 0–8 mm smoothing increment, exact resolution grid, and valid GLMsingle factor combinations have not been fixed. Multiplying the axes now would imply a completed design that does not exist. The count will be added when those levels are locked and the remaining HiPerGator jobs are specified.</p></div>
+  </section>
+</main>
+<footer class="wrap"><span>© 2026 Yujun Chen</span><a href="../">Back to work <span aria-hidden="true">↑</span></a></footer>
+<script src="sensitivity.js"></script>
+</body>
+</html>

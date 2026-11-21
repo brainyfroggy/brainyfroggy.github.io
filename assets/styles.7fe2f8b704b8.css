@@ -22,3 +22,7 @@
 .roi-demo-link span{margin-left:10px}
 @media(max-width:600px){.roi-preview-link{border-radius:5px}.roi-caption{align-items:flex-start;gap:10px}.roi-demo-link{margin-top:3px}}
 @media(prefers-reduced-motion:reduce){.roi-preview-link img{transition:none}}
+.sensitivity-preview-link{display:block;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#fff}
+.sensitivity-preview-link img{display:block;width:100%;height:auto;transition:transform .25s ease}
+.sensitivity-preview-link:hover img{transform:scale(1.008)}
+@media(prefers-reduced-motion:reduce){.sensitivity-preview-link img{transition:none}}

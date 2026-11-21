@@ -1,0 +1,576 @@
+{
+  "rows": [
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Raw",
+      "natural": 0,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "GLMsingle Type-B LSS",
+      "ai": 11
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Raw",
+      "natural": 0,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "GLMsingle Type-B LSS",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Raw",
+      "natural": 0,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "GLMsingle Type-B LSS",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Source-wise z (60 images/source)",
+      "natural": 337,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "GLMsingle Type-B LSS",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Source-wise z (60 images/source)",
+      "natural": 1467,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "GLMsingle Type-B LSS",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Source-wise z (60 images/source)",
+      "natural": 1464,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "GLMsingle Type-B LSS",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Pooled z (120 images)",
+      "natural": 1247,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "GLMsingle Type-B LSS",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Pooled z (120 images)",
+      "natural": 1822,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "GLMsingle Type-B LSS",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Pooled z (120 images)",
+      "natural": 1824,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "GLMsingle Type-B LSS",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Raw",
+      "natural": 0,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Raw",
+      "natural": 0,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 19
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Raw",
+      "natural": 0,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 20
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Source-wise z (60 images/source)",
+      "natural": 4686,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 2035
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Source-wise z (60 images/source)",
+      "natural": 5571,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 3354
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Source-wise z (60 images/source)",
+      "natural": 5548,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 3417
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Pooled z (120 images)",
+      "natural": 4524,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 3029
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Pooled z (120 images)",
+      "natural": 4488,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 5824
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Pooled z (120 images)",
+      "natural": 4493,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 5938
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Trial voxel z across all trials → image mean",
+      "natural": 7341,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 6807
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Trial voxel z across all trials → image mean",
+      "natural": 7484,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 10326
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Trial voxel z across all trials → image mean",
+      "natural": 7501,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 10452
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Trial voxel z within source → image mean",
+      "natural": 7692,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 5084
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Trial voxel z within source → image mean",
+      "natural": 8230,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 7351
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Trial voxel z within source → image mean",
+      "natural": 8207,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 7466
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Trial voxel z within source → image mean → pooled image z",
+      "natural": 4942,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 2198
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Trial voxel z within source → image mean → pooled image z",
+      "natural": 5828,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 3304
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Trial voxel z within source → image mean → pooled image z",
+      "natural": 5797,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 3365
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Trial voxel z within run → image mean",
+      "natural": 18292,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 83088
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Trial voxel z within run → image mean",
+      "natural": 18189,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 85611
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Trial voxel z within run → image mean",
+      "natural": 18160,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 85689
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Trial voxel z within run → image mean → source image z",
+      "natural": 18479,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 63178
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Trial voxel z within run → image mean → source image z",
+      "natural": 19978,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 67137
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Trial voxel z within run → image mean → source image z",
+      "natural": 19929,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 67280
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Trial voxel z within run → image mean → pooled image z",
+      "natural": 14949,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 78002
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Trial voxel z within run → image mean → pooled image z",
+      "natural": 15074,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 81215
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Trial voxel z within run → image mean → pooled image z",
+      "natural": 15045,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 81321
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Trial voxel z within run and source → image mean",
+      "natural": 24622,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 79963
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Trial voxel z within run and source → image mean",
+      "natural": 25711,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 82772
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Trial voxel z within run and source → image mean",
+      "natural": 25650,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 82906
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Trial voxel z within run and source → image mean → source image z",
+      "natural": 21266,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 74051
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Trial voxel z within run and source → image mean → source image z",
+      "natural": 22542,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 77227
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Trial voxel z within run and source → image mean → source image z",
+      "natural": 22517,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 77411
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Trial voxel z within run and source → image mean → pooled image z",
+      "natural": 21418,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 74537
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Trial voxel z within run and source → image mean → pooled image z",
+      "natural": 22682,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 77929
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Trial voxel z within run and source → image mean → pooled image z",
+      "natural": 22659,
+      "family": "SPM 6 mm / matched LSS",
+      "radius": "5 voxels (<10 mm)",
+      "preprocessing": "SPM 6 mm; MNI 2 mm",
+      "estimator": "SPM12 LSS",
+      "ai": 78105
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Raw",
+      "natural": 0,
+      "family": "60-image estimator comparison",
+      "radius": "Strict radius <5 voxels on 2-mm grid (physical radius <10 mm; 485 offsets)",
+      "preprocessing": "Legacy SPM preprocessing; MNI 2-mm grid; 6-mm smoothing",
+      "estimator": "GLMsingle Type-D treatment: fixed HRF + GLMdenoise + fractional ridge",
+      "ai": 10
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Raw",
+      "natural": 0,
+      "family": "60-image estimator comparison",
+      "radius": "Strict radius <5 voxels on 2-mm grid (physical radius <10 mm; 485 offsets)",
+      "preprocessing": "Legacy SPM preprocessing; MNI 2-mm grid; 6-mm smoothing",
+      "estimator": "GLMsingle Type-D treatment: fixed HRF + GLMdenoise + fractional ridge",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Raw",
+      "natural": 0,
+      "family": "60-image estimator comparison",
+      "radius": "Strict radius <5 voxels on 2-mm grid (physical radius <10 mm; 485 offsets)",
+      "preprocessing": "Legacy SPM preprocessing; MNI 2-mm grid; 6-mm smoothing",
+      "estimator": "GLMsingle Type-D treatment: fixed HRF + GLMdenoise + fractional ridge",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Source-wise z (60 images/source)",
+      "natural": 23805,
+      "family": "60-image estimator comparison",
+      "radius": "Strict radius <5 voxels on 2-mm grid (physical radius <10 mm; 485 offsets)",
+      "preprocessing": "Legacy SPM preprocessing; MNI 2-mm grid; 6-mm smoothing",
+      "estimator": "GLMsingle Type-D treatment: fixed HRF + GLMdenoise + fractional ridge",
+      "ai": 55581
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Source-wise z (60 images/source)",
+      "natural": 26414,
+      "family": "60-image estimator comparison",
+      "radius": "Strict radius <5 voxels on 2-mm grid (physical radius <10 mm; 485 offsets)",
+      "preprocessing": "Legacy SPM preprocessing; MNI 2-mm grid; 6-mm smoothing",
+      "estimator": "GLMsingle Type-D treatment: fixed HRF + GLMdenoise + fractional ridge",
+      "ai": 60222
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Source-wise z (60 images/source)",
+      "natural": 26332,
+      "family": "60-image estimator comparison",
+      "radius": "Strict radius <5 voxels on 2-mm grid (physical radius <10 mm; 485 offsets)",
+      "preprocessing": "Legacy SPM preprocessing; MNI 2-mm grid; 6-mm smoothing",
+      "estimator": "GLMsingle Type-D treatment: fixed HRF + GLMdenoise + fractional ridge",
+      "ai": 60516
+    },
+    {
+      "ratingNorm": "Raw",
+      "betaNorm": "Pooled z (120 images)",
+      "natural": 19377,
+      "family": "60-image estimator comparison",
+      "radius": "Strict radius <5 voxels on 2-mm grid (physical radius <10 mm; 485 offsets)",
+      "preprocessing": "Legacy SPM preprocessing; MNI 2-mm grid; 6-mm smoothing",
+      "estimator": "GLMsingle Type-D treatment: fixed HRF + GLMdenoise + fractional ridge",
+      "ai": 67207
+    },
+    {
+      "ratingNorm": "Source-wise z (60 images/source)",
+      "betaNorm": "Pooled z (120 images)",
+      "natural": 19893,
+      "family": "60-image estimator comparison",
+      "radius": "Strict radius <5 voxels on 2-mm grid (physical radius <10 mm; 485 offsets)",
+      "preprocessing": "Legacy SPM preprocessing; MNI 2-mm grid; 6-mm smoothing",
+      "estimator": "GLMsingle Type-D treatment: fixed HRF + GLMdenoise + fractional ridge",
+      "ai": 70374
+    },
+    {
+      "ratingNorm": "Pooled z (120 images)",
+      "betaNorm": "Pooled z (120 images)",
+      "natural": 19829,
+      "family": "60-image estimator comparison",
+      "radius": "Strict radius <5 voxels on 2-mm grid (physical radius <10 mm; 485 offsets)",
+      "preprocessing": "Legacy SPM preprocessing; MNI 2-mm grid; 6-mm smoothing",
+      "estimator": "GLMsingle Type-D treatment: fixed HRF + GLMdenoise + fractional ridge",
+      "ai": 70509
+    },
+    {
+      "ratingNorm": "Raw GPT valence/arousal ratings",
+      "betaNorm": "Raw",
+      "natural": 0,
+      "family": "60-image estimator comparison",
+      "radius": "Strict physical radius <10 mm (569 offsets on the anisotropic grid)",
+      "preprocessing": "fMRIPrep preprocessing; 4-mm smoothing before the first-level model; ~1.797×1.797×2.25-mm grid",
+      "estimator": "SPM12 LSS: one target trial versus all other trials",
+      "ai": 0
+    },
+    {
+      "ratingNorm": "Raw GPT valence/arousal ratings",
+      "betaNorm": "Source-wise z (60 images/source)",
+      "natural": 4898,
+      "family": "60-image estimator comparison",
+      "radius": "Strict physical radius <10 mm (569 offsets on the anisotropic grid)",
+      "preprocessing": "fMRIPrep preprocessing; 4-mm smoothing before the first-level model; ~1.797×1.797×2.25-mm grid",
+      "estimator": "SPM12 LSS: one target trial versus all other trials",
+      "ai": 3004
+    },
+    {
+      "ratingNorm": "Raw GPT valence/arousal ratings",
+      "betaNorm": "Pooled z (120 images)",
+      "natural": 5319,
+      "family": "60-image estimator comparison",
+      "radius": "Strict physical radius <10 mm (569 offsets on the anisotropic grid)",
+      "preprocessing": "fMRIPrep preprocessing; 4-mm smoothing before the first-level model; ~1.797×1.797×2.25-mm grid",
+      "estimator": "SPM12 LSS: one target trial versus all other trials",
+      "ai": 2374
+    }
+  ],
+  "updated": "2026-11-21",
+  "scope": "Completed 30-participant, 60-image-per-source GPT valence-arousal searchlight RSA configurations with per-map voxelwise FDR q<0.05 and cluster extent >=10 voxels"
+}
